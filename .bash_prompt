@@ -1,0 +1,23 @@
+# Bash prompt extravaganza!
+
+export TERM=gnome-256color
+
+MAGENTA=$(tput setaf 197)
+ORANGE=$(tput setaf 172)
+GREEN=$(tput setaf 118)
+PURPLE=$(tput setaf 141)
+WHITE=$(tput setaf 255)
+
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+function parse_git_dirty() {
+	git diff --quiet --ignore-submodules HEAD 2>/dev/null; [ $? -eq 1 ] && echo '*'
+}
+
+function parse_git_branch() {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+PS1="$BOLD$MAGENTA\u$WHITE at $ORANGE\h$WHITE in$GREEN \W$WHITE\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")$PURPLE\$(parse_git_branch) $RESET\n"
+#PS1="\[\e[1;34m\][\u@\h \W]\$ \[\e[0m\] "

@@ -1,0 +1,55 @@
+# Easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Be nice
+alias please=sudo
+alias hosts='sudo $EDITOR /etc/hosts'
+
+# ls coloring and handy shortcut for list
+alias ls='ls --color=auto'
+alias lsl='ls -l --color=auto'
+
+# Display hexdump using two columns
+alias hexdump='hexdump -C'
+
+# Highlight grep output
+alias grep='grep --color'
+
+# Nice little shortcuts
+alias go='gnome-open'
+alias server='python2 -m SimpleHTTPServer'
+alias updateclock='sudo ntpd -qg && sudo hwclock -w'
+alias clearswap='sudo swapoff -a && sudo swapon -a'
+alias startwebserver='sudo systemctl start httpd mysqld mongodb'
+alias phperr='tail /var/log/httpd/error_log | grep PHP'
+
+# Syntax highlighted cat
+alias c='pygmentize -O style=monokai -f console256 -g'
+
+# Assign default permissions to current folder (w.r.t. http group)
+alias fixhttpfolder='sudo find -exec chgrp http {} \; && sudo find -exec chmod ug+r {} \; && sudo find -type d -exec chmod ug+x {} \;'
+
+# Allow copying from and to clipboard
+alias cbcopy='xsel --clipboard --input'
+alias cbpaste='xsel --clipboard --output'
+
+# GIT STUFF
+
+# Undo a `git push`
+alias undopush="git push -f origin HEAD^:master"
+
+# git root
+alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+alias gitgraph='git log --graph --pretty=format:"%h%x09%an%x09%ad%x09%s"'
+
+# OTHER
+
+#View HTTP traffic
+alias sniff="sudo ngrep -d 'wlan0' -t '^(GET|POST)' 'tcp and port 80'"
+
+# ROT13-encode text. Works for deconding too!
+alias rot13='tr a-zA-Z n-za-mN-ZA-M' 

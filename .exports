@@ -1,0 +1,14 @@
+# Make vim the default editor
+export EDITOR=vim
+export GIT_EDITOR=vim
+export SVN_EDITOR=vim
+
+#Don't clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Larger bash history
+export HISTCONTROL=erasedups
+export HISTSIZE=5000
+
+# For dynamically changing files
+export LESS='-R'
