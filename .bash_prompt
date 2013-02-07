@@ -1,5 +1,6 @@
 # Bash prompt extravaganza!
 
+# Note: this might need the ncurses-term package
 export TERM=gnome-256color
 
 MAGENTA=$(tput setaf 197)
