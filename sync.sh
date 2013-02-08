@@ -14,5 +14,5 @@ else
 	fi
 fi
 unset doIt
-source ./solarized-theme/set_dark.sh
+sh ./solarized-theme/set_dark.sh
 source ~/.bashrc

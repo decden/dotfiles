@@ -44,11 +44,7 @@ alias undopush="git push -f origin HEAD^:master"
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
-alias gitgraph='git log --graph --pretty=format:"%h%x09%an%x09%ad%x09%s"'
-
-# OTHER
-
-#View HTTP traffic
+alias gitgraph="git log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'"
 alias sniff="sudo ngrep -d 'wlan0' -t '^(GET|POST)' 'tcp and port 80'"
 
 # ROT13-encode text. Works for deconding too!
