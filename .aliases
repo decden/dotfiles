@@ -30,7 +30,7 @@ alias phperr='tail /var/log/httpd/error_log | grep PHP'
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # Assign default permissions to current folder (w.r.t. http group)
-alias fixhttpfolder='sudo find -exec chgrp http {} \; && sudo find -exec chmod ug+r {} \; && sudo find -type d -exec chmod ug+x {} \;'
+alias fixhttpfolder='sudo find -exec chgrp http {} + && sudo find -exec chmod ug+r {} + && sudo find -type d -exec chmod ug+x {} +'
 
 # Allow copying from and to clipboard
 alias cbcopy='xsel --clipboard --input'
