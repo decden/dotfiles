@@ -16,6 +16,9 @@ unset file
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
+# Tab-completio
+complete -cf man
+
 # extra bash_prompt exports aliases functions
 
 # Path for ruby gems
