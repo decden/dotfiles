@@ -16,10 +16,15 @@ unset file
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
-# Tab-completio
+# Tab-completion
 complete -cf man
 
 # extra bash_prompt exports aliases functions
 
 # Path for ruby gems
 PATH="$PATH:/home/denis/.gem/ruby/1.9.1/bin"
+
+# As of gnome-terminal 3.8.1 this stupid hack is needed in order to open new
+# tabs in the same directory...
+source /etc/profile.d/vte.sh
+export PS1='\[$(__vte_ps1)\]'$PS1

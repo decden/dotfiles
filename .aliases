@@ -23,6 +23,7 @@ alias go='gnome-open'
 alias server='python2 -m SimpleHTTPServer'
 alias updateclock='sudo ntpd -qg && sudo hwclock -w'
 alias clearswap='sudo swapoff -a && sudo swapon -a'
+alias dropcaches='sudo sync; echo 3 | sudo tee /proc/sys/vm/drop_caches'
 alias startwebserver='sudo systemctl start httpd mysqld mongodb'
 alias phperr='tail /var/log/httpd/error_log | grep PHP'
 
@@ -30,7 +31,7 @@ alias phperr='tail /var/log/httpd/error_log | grep PHP'
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # Assign default permissions to current folder (w.r.t. http group)
-alias fixhttpfolder='sudo find -exec chgrp http {} \; && sudo find -exec chmod ug+r {} \; && sudo find -type d -exec chmod ug+x {} \;'
+alias fixhttpfolder='sudo find -exec chgrp http {} + && sudo find -exec chmod ug+r {} + && sudo find -type d -exec chmod ug+x {} +'
 
 # Allow copying from and to clipboard
 alias cbcopy='xsel --clipboard --input'
