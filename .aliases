@@ -24,7 +24,7 @@ alias server='python2 -m SimpleHTTPServer'
 alias updateclock='sudo ntpd -qg && sudo hwclock -w'
 alias clearswap='sudo swapoff -a && sudo swapon -a'
 alias dropcaches='sudo sync; echo 3 | sudo tee /proc/sys/vm/drop_caches'
-alias startwebserver='sudo systemctl start httpd mysqld mongodb'
+alias startwebserver='sudo systemctl start httpd mysqld mongodb postgresql'
 alias phperr='tail /var/log/httpd/error_log | grep PHP'
 
 # Syntax highlighted cat
