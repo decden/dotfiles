@@ -24,4 +24,4 @@ PATH="$PATH:/home/denis/.gem/ruby/1.9.1/bin"
 # As of gnome-terminal 3.8.1 this stupid hack is needed in order to open new
 # tabs in the same directory...
 source /etc/profile.d/vte.sh
-export PS1='\[$(__vte_ps1)\]'$PS1
+PROMPT_COMMAND="__vte_prompt_command"
