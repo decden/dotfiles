@@ -22,4 +22,4 @@ complete -cf man
 # extra bash_prompt exports aliases functions
 
 # Path for ruby gems
-PATH="$PATH:/home/denis/.gem/ruby/1.9.1/bin"
+PATH="$PATH:`ruby -rubygems -e 'puts Gem.user_dir'`"
